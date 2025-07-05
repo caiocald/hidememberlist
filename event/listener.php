@@ -43,7 +43,11 @@ class listener implements EventSubscriberInterface
         $mode   = $this->request->variable('mode', '');
         $script = basename($this->request->server('PHP_SELF', ''));
 
-        $is_memberlist = $mode === 'memberlist' || $script === 'memberlist.php';
+        // vê se é memberlist ou group (mesmo via URL amigável
+        // o mode interno continua 'memberlist' ou 'group'),
+        // ou se está acessando diretamente memberlist.php
+        $is_memberlist = in_array($mode, ['memberlist', 'group']) || $script === 'memberlist.php';
+
         if (! $is_memberlist) {
             return;
         }
