@@ -1,0 +1,37 @@
+{
+    "name": "red1000/hidememberlist",
+    "type": "phpbb-extension",
+    "description": "Só administradores podem ver a lista de membros",
+    "homepage": "https://seusite.com/",  
+    "version": "1.0.0",
+    "time": "2025-06-26",
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "Caio Negri",
+            "email": "caiocald@gmail.com",
+            "role": "Desenvolvedor"
+        }
+    ],
+    "keywords": [
+        "phpbb"
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "composer/installers": "~1.0"
+    },
+    "require-dev": {
+        "phpbb/epv": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "red1000\\hidememberlist\\": "event/"
+        }
+    },
+    "extra": {
+        "display-name": "Hide Memberlist",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.3.0,<4.0.0@dev"
+        }
+    }
+}

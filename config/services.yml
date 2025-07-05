@@ -1,0 +1,11 @@
+services:
+    red1000.hidememberlist.listener:
+        class: red1000\hidememberlist\event\listener
+        arguments:
+            - '@auth'
+            - '@request'
+            - '@controller.helper'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        tags:
+            - { name: event.listener }
